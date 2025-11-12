@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidroponia
+    
+    </title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/image/logohidro.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="container hero__inner">
+            <h1 class="hero__title">GUÍA RAPIDA E IRRESISTIBLE PARA EMPEZAR EN LA HIDROPONIA: CULTIVA TUS PROPIAS PLANTAS SIN TIERRA</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="container-principal">
+            <div class="contact-section">
+                <img src="/image/ebook.png" alt="Ebook de hidroponia">
+            </div>
+            <div class="form-container">
+                
+
+                <div class="split_container">
+                    <form id="form">
+                        <h2>¡A qué correo deseas que te envie la plantilla gratuita!</h2>
+
+                        <label for="nombre">Nombre:</labe>
+                        <input type="text" id="nombre" placeholder="Escribe tu nombre" name="name" required>
+
+                        <label for="email">Tu Correo Electrónico:</label>
+                        <input type="email" id="email" class="email-input" placeholder="Tu Email" name="email" required>
+
+                        <input type="submit" id="button" class="submit-button" value="¡RECIBIR LA RECOMPENSA!">
+
+                        
+
+                        <p class="mensaje" id="resultado"></p>
+                    </form>
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script type="text/javascript">
+  emailjs.init('3zWSU_qUh-EhfP2nb')
+
+   
+  
+</script>
+
+<script>
+    const btn = document.getElementById("button");
+
+document.getElementById("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  btn.value = "Enviando...";
+
+  const serviceID = "default_service";
+  const templateID = "template_3vcc03x";
+
+  emailjs.sendForm(serviceID, templateID, this).then(
+    () => {
+      btn.value = "¡RECIBIR LA RECOMPENSA!";
+      window.location.href = "gracias.html";
+    },
+    (err) => {
+      btn.value = "Enviar Mensaje";
+      alert(JSON.stringify(err));
+    },
+  );
+});
+</script>
+
+
+
+
+                </div>
+            </div>    
+        </section>
+
+        <!-- Por qué elegirnos -->
+        <section class="why">
+            <div class="container2">
+                <div class="why__header">
+                    <i class="fa-solid fa-minus"></i>
+                    <h3 class="why__title"><span>¿Para</span> <span class="accent">quién es ésta guía?</span></h3>
+                </div>
+
+                <div class="why__grid">
+                    <div class="why__item">
+                        <div>
+                            <i class="fa-solid fa-leaf" style="color: #f5d60a;"></i>
+                            <h4 class="why__itemTitle">Quieran alimentos frescos</h4>
+                            <p>Personas que quieran cultivar alimentos frescas en casa sin usar tierra</p>
+                        </div>
+                    </div>
+
+                    <div class="why__item">
+                        <div>
+                            <i class="fa-solid fa-clover" style="color: #f5d60a;"></i>
+                            <h4 class="why__itemTitle">Emprendedores</h4>
+                            <p>Emprendedores que buscan un negocio innovador y sostenible</p>
+                        </div>
+                    </div>
+
+                    <div class="why__item">
+                        <div>
+                            <i class="fa-solid fa-sun" style="color: #f5d60a;"></i>
+                            <h4 class="why__itemTitle">Jardineros</h4>
+                            <p>Amantes de la jardineria que quieren probar nuevas tecnicas</p>
+                        </div>
+                    </div>
+
+                    <div class="why__item">
+                        <div>
+                            <i class="fa-solid fa-droplet" style="color: #f5d60a;"></i>
+                            <h4 class="why__itemTitle">Cualquier persona</h4>
+                            <p>Cualquier persona interesada en Agricultura urbana y ecologica</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--imagen de Dr-->
+            <div class="why__image">
+                <img src="/image/maestra.png" alt="Dr. Ricardo Fuentes con una mascota" class="responsive-img cover">
+            </div>
+        </section>
+
+    </main>
+<script>
+    const btn = document.getElementById("button");
+
+document.getElementById("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  btn.value = "Enviando...";
+
+  const serviceID = "default_service";
+  const templateID = "template_3vcc03x";
+
+  emailjs.sendForm(serviceID, templateID, this).then(
+    () => {
+      btn.value = "¡RECIBIR LA RECOMPENSA!";
+      alert("Mensaje enviado correctamente");
+    },
+    (err) => {
+      btn.value = "Enviar Mensaje";
+      alert(JSON.stringify(err));
+    },
+  );
+});
+</script>
+
+     
+
+    <footer>
+        <div class="footer">
+            <p>TODOS LOS DERECHOS RESERVADOS /GRIMBOOST/©2025</p>
+        </div>
+        
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

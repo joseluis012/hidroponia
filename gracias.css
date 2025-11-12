@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+  position: relative; /* Para que el pseudo-elemento se posicione respecto a header */
+  background-image: url('/image/srta.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  text-align: center;
+  font-size: 15px;
+  padding: 1rem;
+  overflow: hidden; /* Para evitar que el pseudo-elemento se salga */
+  color:rgb(255, 255, 255); /* Opcional: para que el texto contraste con el gradiente */
+  
+}
+
+header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, green, rgb(6, 80, 16));
+  opacity: 0.8;
+  z-index: 0; /* Detrás del contenido */
+  pointer-events: none;
+  display: block;
+}
+
+.container.hero__inner {
+  position: relative; /* Para que el texto esté por encima del gradiente */
+  z-index: 1;
+}
+
+
+/*video*/
+.video{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 700px;
+    
+}
+
+
+/* Redes sociales */
+.redes_sociales{
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #49AE44;
+  color: black;
+  padding: 2rem 1rem;
+}
+
+.redes_sociales_titulo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container3{
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.redes-sociales {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(241, 7, 7);
+  color:white;
+  font-size: 1.25rem;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.redes-sociales:hover,
+  .redes-sociales:focus {
+    animation: pulseRed 1.5s infinite;
+    background-color: #d0143f; /* rojo más oscuro */
+    box-shadow: 0 0 12px 4px rgba(234, 26, 78, 0.8);
+    outline: none;
+  }
+
+  @keyframes pulseRed {
+    0% {
+      box-shadow: 0 0 8px 2px rgba(234, 26, 78, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 14px 6px rgba(234, 26, 78, 1);
+    }
+    100% {
+      box-shadow: 0 0 8px 2px rgba(234, 26, 78, 0.6);
+    }
+  }
+
+
+
+.instagram,
+.telegram {
+  background-color: rgb(227, 238, 226);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  background-image: url('/image/ramas.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  
+}
+
+
+
+
+.inst{
+    margin-bottom: 2.7rem;}
+
+
+.fa-telegram,
+.fa-whatsapp
+ {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.redes_sociales_paso {
+    margin-bottom: 1rem;
+    color: #0c0101;
+    border-radius: 3px;
+    background-color: #49AE44;
+    padding: 0.5rem;
+    height: auto;
+    width: 100px;
+    margin: 0 auto 1.5rem auto;
+
+    
+
+}
+
+h4{
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.inscripcion{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer{
+  background-color: #051f01;
+  text-align: center;
+  font-size: 13px;
+  padding: 1rem;
+  color:#fff;
+}
+
+.inscripcion {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-inscripcion {
+  display: inline-block;
+  background-color: #1EFF00; /* Verde brillante */
+  color: #fff;
+  font-family: 'poppins', sans-serif;
+  font-weight: 700;
+  font-size: 29px;
+  padding: 20px 60px;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(30, 255, 0, 0.4);
+  user-select: none;
+}
+
+.btn-inscripcion:hover,
+.btn-inscripcion:focus {
+  background-color: #065010; /* Verde oscuro */
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(6, 80, 16, 0.7);
+  outline: none;
+}
+
+.btn-inscripcion:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 6px rgba(6, 80, 16, 0.5);
+}
+/* Media Queries para responsividad */
+@media (min-width: 768px) {
+  .why__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .container3 {
+    flex-direction: row;
+  }
+  
+  .autor {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .sobre_el_autor {
+    text-align: left;
+  }
+  
+  .titulo_medico {
+    text-align: left;
+  }
+  
+  
+}
+
+@media (min-width: 992px) {
+  .why {
+    grid-template-columns: 1fr 460px;
+  }
+  
+  .why__image {
+    display: block;
+  }
+  
+  .container-principal {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1rem;
+  }
+  
+  form {
+    padding: 1.5rem 1rem;
+  }
+  
+  .ovalo {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .autor {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .video__inner  {
+    position:relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+     /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border:5px;
+    box-sizing: border-box;
+    
+  }
+  .video__inner iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+  }
+}
